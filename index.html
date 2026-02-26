@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HostelFix - Access Your Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .login-card-v2 {
+            background: white;
+            padding: 4rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .login-card-v2 h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card-v2 p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .login-form-group {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .login-form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-input-v2 {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .login-input-v2:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+
+        .login-btn-v2 {
+            width: 100%;
+            padding: 1.2rem;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .login-footer-links {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .login-footer-links a {
+            color: var(--primary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card-v2 reveal active">
+        <a href="home.html" class="logo"
+            style="justify-content: center; margin-bottom: 2rem; font-size: 2rem;">Hostel<span>Fix</span></a>
+        <h1>Welcome Back</h1>
+        <p>Access your student portal or explore fixed hostels.</p>
+
+        <form id="loginForm">
+            <div class="login-form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="login-input-v2" placeholder="fuzail@university.edu" required>
+            </div>
+            <div class="login-form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="login-input-v2" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary login-btn-v2">Sign In</button>
+        </form>
+
+        <div class="login-footer-links">
+            <p>Don't have an account? <a href="provider.html">Join our squad</a></p>
+            <p style="margin-top: 1rem;"><a href="home.html">← Back to Home</a></p>
+            <p style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 2rem; opacity: 0.5;">&copy;
+                2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Inline login logic for immediate feedback and to demonstrate the requested routing
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Define the "particular" email and password as requested
+            const PART_EMAIL = "admin@hostelfix.com";
+            const PART_PASS = "admin123";
+
+            if (email === PART_EMAIL && password === PART_PASS) {
+                // Redirect to normal site
+                window.location.href = "home.html";
+            } else {
+                // Redirect to dashboard
+                window.location.href = "dashboard.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

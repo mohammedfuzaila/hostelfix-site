@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | HostelFix - Student Lifecycle</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-v2-hero {
+            padding: 10rem 0 6rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+        }
+
+        .story-section-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            margin: 8rem 0;
+        }
+
+        .mission-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 10rem;
+        }
+
+        .mission-card-v2 {
+            padding: 3rem;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .mission-card-v2:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0 8rem;
+        }
+
+        .team-member-v2 {
+            text-align: center;
+        }
+
+        .team-member-v2 img {
+            width: 200px;
+            height: 200px;
+            border-radius: 32px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .team-member-v2:hover img {
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+
+            .story-section-v2,
+            .mission-grid-v2 {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="home.html" class="logo">Hostel<span>Fix</span></a>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="about.html" class="active">Story</a>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="color: white; padding: 0.6rem 1.2rem;">Support</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">OUR STORY</span>
+            <h1>The <span style="color: var(--primary)">HostelFix</span> Ethos</h1>
+            <p class="section-subtitle">Building the trust economy inside student housing, one hostel at a time.</p>
+        </div>
+
+        <section class="story-section-v2 reveal">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                    alt="Team Session" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+            <div class="story-content">
+                <span class="section-tag">THE BACKSTORY</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">HostelFix was born out of <span
+                        style="color: var(--primary);">frustration.</span></h2>
+                <p class="section-subtitle" style="margin-left: 0; text-align: left; max-width: 100%;">
+                    Imagine a hot summer night with a broken fan and a final exam tomorrow. The warden says wait 3 days.
+                    We said enough.
+                    HostelFix was created to bridge the gap between student problems and reliable local fixes.
+                </p>
+                <p class="section-subtitle"
+                    style="margin-left: 0; text-align: left; max-width: 100%; margin-top: 1.5rem;">
+                    From a single hostel room to 15+ universities, we've helped over 10,000 students live a more
+                    productive and stress-free life.
+                </p>
+            </div>
+        </section>
+
+        <section class="mission-grid-v2">
+            <div class="mission-card-v2 reveal" style="transition-delay: 0.1s;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Mission</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">To empower every hostel student with instant,
+                    reliable, and affordable lifestyle services, making college life about the memories, not the chores.
+                </p>
+            </div>
+            <div class="mission-card-v2 reveal" style="transition-delay: 0.2s;">
+                <h3 style="color: var(--secondary); margin-bottom: 1rem;">Vision</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">To become the foundational infrastructure for
+                    student living globally, fostering a community where problems are solved in minutes.</p>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-tag">THE SQUAD</span>
+                <h2 style="font-size: 3rem;">Meet the Founders</h2>
+            </div>
+            <div class="team-grid-v2">
+                <div class="team-member-v2">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+                        alt="Alex">
+                    <h3>FUZAIL RIVERIA</h3>
+                    <p style="color: var(--primary); font-weight: 700;">Co-Founder & CEO</p>
+                </div>
+                <div class="team-member-v2">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
+                        alt="Sarah">
+                    <h3>Sarah Chen</h3>
+                    <p style="color: var(--primary); font-weight: 700;">Head of Products</p>
+                </div>
+                <div class="team-member-v2">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+                        alt="Mike">
+                    <h3>Mike Hudson</h3>
+                    <p style="color: var(--primary); font-weight: 700;">Tech Lead</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container" style="text-align: center; padding: 2rem 0;">
+            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

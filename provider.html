@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as Provider | HostelFix - Earn with Student Community</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .provider-hero-v2 {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .benefit-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin: 4rem 0 8rem;
+        }
+
+        .benefit-card-v2 {
+            background: var(--surface);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card-v2:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .benefit-card-v2 .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .reg-card-v2 {
+            background: var(--text-main);
+            color: white;
+            padding: 5rem;
+            border-radius: 40px;
+            margin-bottom: 10rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .reg-input-v2 {
+            width: 100%;
+            padding: 1.1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            margin-top: 0.5rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .reg-input-v2:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--secondary);
+            outline: none;
+        }
+
+        @media (max-width: 1024px) {
+            .reg-card-v2 {
+                grid-template-columns: 1fr;
+                padding: 3rem;
+            }
+
+            .benefit-grid-v2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="home.html" class="logo">Hostel<span>Fix</span></a>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="provider.html" class="active">Squad</a>
+                    <a href="contact.html" class="btn btn-primary" style="color: white; padding: 0.6rem 1.2rem;">Join
+                        Squad</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">SQUAD V2.0</span>
+            <h1>Be the Hero of <span style="color: var(--primary)">Your Campus.</span></h1>
+            <p class="section-subtitle">Turn your skills into earnings and help your hostel mates survive the semester.
+            </p>
+        </div>
+
+        <div class="benefit-grid-v2">
+            <div class="benefit-card-v2 reveal" style="transition-delay: 0.1s;">
+                <span class="icon">⏰</span>
+                <h3>Flexi Hours</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Work between classes or on weekends. You are the
+                    boss of your own time.</p>
+            </div>
+            <div class="benefit-card-v2 reveal" style="transition-delay: 0.2s;">
+                <span class="icon">💰</span>
+                <h3>Direct Pay</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Earnings are credited to your HostelFix wallet
+                    instantly after every mission.</p>
+            </div>
+            <div class="benefit-card-v2 reveal" style="transition-delay: 0.3s;">
+                <span class="icon">🛡️</span>
+                <h3>Uni-Verified</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Safe community and verified student users.
+                    Security is our priority.</p>
+            </div>
+        </div>
+
+        <section id="register" class="reg-card-v2 reveal">
+            <div>
+                <h2>Ready to <span style="color: var(--secondary)">Start?</span></h2>
+                <p style="opacity: 0.7; font-size: 1.1rem; line-height: 1.7; margin: 1.5rem 0;">Join 2,000+ student
+                    providers today. No professional tools needed for basic services. We provide training for advanced
+                    repairs.</p>
+                <div style="margin-top: 3rem; display: grid; gap: 1.5rem;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <span style="color: var(--secondary); font-size: 1.5rem;">✓</span>
+                        <p>Valid University ID Required</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <span style="color: var(--secondary); font-size: 1.5rem;">✓</span>
+                        <p>Weekly Training Sessions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 24px;">
+                <form
+                    onsubmit="event.preventDefault(); alert('Application Received! We will ping you on WhatsApp shortly.')">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="font-weight: 700; font-size: 0.9rem; opacity: 0.6;">Full Name</label>
+                        <input type="text" class="reg-input-v2" placeholder="FUZAIL" required>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="font-weight: 700; font-size: 0.9rem; opacity: 0.6;">WhatsApp Number</label>
+                        <input type="tel" class="reg-input-v2" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="font-weight: 700; font-size: 0.9rem; opacity: 0.6;">Primary Skill</label>
+                        <select class="reg-input-v2" required>
+                            <option value="">Select Skills</option>
+                            <option value="repairs">Electrical Repairs</option>
+                            <option value="cleaning">Room Cleaning</option>
+                            <option value="delivery">Campus Delivery</option>
+                            <option value="tech">Laptop/Mobile Help</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Apply to
+                        Squad →</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer style="margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
+        <div class="container" style="text-align: center; padding-bottom: 2rem;">
+            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

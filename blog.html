@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | HostelFix - Student Hacks</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-header-v2 {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .blog-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0 10rem;
+        }
+
+        .blog-card-v2 {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .blog-card-v2:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-img-v2 {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .blog-content-v2 {
+            padding: 2.5rem;
+        }
+
+        .tag-v2 {
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 1.5rem;
+            left: 2rem;
+        }
+
+        .blog-content-v2 h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-content-v2 p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-v2 {
+            color: var(--primary);
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="home.html" class="logo">Hostel<span>Fix</span></a>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="how-it-works.html">Hacks</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html" class="btn btn-primary" style="color: white; padding: 0.6rem 1.2rem;">Get
+                        Help</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">RESOURCES V2.0</span>
+            <h1>Hostel <span style="color: var(--primary)">Insights</span></h1>
+            <p class="section-subtitle">Curated hacks for a frictionless college journey.</p>
+        </div>
+
+        <div class="blog-grid-v2">
+            <div class="blog-card-v2 reveal" style="transition-delay: 0.1s;">
+                <div class="blog-img-v2"
+                    style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08759df9a13?auto=format&fit=crop&w=600&q=80')">
+                    <span class="tag-v2">Lifestyle</span>
+                </div>
+                <div class="blog-content-v2">
+                    <h3>The Ultimate Packing Hack for Small Hostel Closets</h3>
+                    <p>Learn how to fit your whole wardrobe into that single 2x2 cupboard with physics-defying folds.
+                    </p>
+                    <a href="#" class="link-v2">Read Insight →</a>
+                </div>
+            </div>
+
+            <div class="blog-card-v2 reveal" style="transition-delay: 0.2s;">
+                <div class="blog-img-v2"
+                    style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80')">
+                    <span class="tag-v2">Budgeting</span>
+                </div>
+                <div class="blog-content-v2">
+                    <h3>Living Like a King on a 500-Rupee Week</h3>
+                    <p>Smart spending strategies for when that allowance is running low before mid-terms.</p>
+                    <a href="#" class="link-v2">Read Insight →</a>
+                </div>
+            </div>
+
+            <div class="blog-card-v2 reveal" style="transition-delay: 0.3s;">
+                <div class="blog-img-v2"
+                    style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80')">
+                    <span class="tag-v2">Tech Hacks</span>
+                </div>
+                <div class="blog-content-v2">
+                    <h3>Supercharge Your Laptop for Late Night Sessions</h3>
+                    <p>Simple software tweaks and cleaning tips to keep your machine cool and fast under pressure.</p>
+                    <a href="#" class="link-v2">Read Insight →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container" style="text-align: center; padding: 2rem 0;">
+            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

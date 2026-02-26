@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | HostelFix - Student-Friendly Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 100%, rgba(79, 70, 229, 0.05) 0%, transparent 60%);
+        }
+
+        .services-container {
+            margin-bottom: 8rem;
+        }
+
+        .category-section {
+            margin-bottom: 6rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-icon-bg {
+            width: 64px;
+            height: 64px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-item:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .price-chip {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .book-btn-v2 {
+            width: 100%;
+            margin-top: 2rem;
+            background: #F1F5F9;
+            color: var(--text-main);
+            border: none;
+        }
+
+        .service-item:hover .book-btn-v2 {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="home.html" class="logo">Hostel<span>Fix</span></a>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="services.html" class="active">Services</a>
+                    <a href="how-it-works.html">How it Works</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="color: white; padding: 0.6rem 1.2rem;">Help</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header reveal">
+            <div class="section-header reveal">
+                <span class="section-tag">PREMIUM CARE</span>
+                <h1>The HostelFix <span style="color: var(--primary)">Services</span></h1>
+                <p class="section-subtitle">
+                    Professional, student-verified help for every hostel crisis.
+                </p>
+            </div>
+        </div>
+
+        <div class="container services-container">
+            <!-- Room Repair -->
+            <section class="category-section reveal">
+                <div class="category-header">
+                    <div class="category-icon-bg">🛠️</div>
+                    <div>
+                        <h2>Room Repair</h2>
+                        <p style="color: var(--text-muted);">Quick fixes for your living space.</p>
+                    </div>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <span class="price-chip">₹100</span>
+                        <h3>Fan Repair</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Noisy bearings or slow speed? We'll have
+                            it spinning like new.</p>
+                        <button class="btn btn-primary book-btn-v2">Booking</button>
+                    </div>
+                    <div class="service-item">
+                        <span class="price-chip">₹50</span>
+                        <h3>Light Repair</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Flickering tubes or dead bulbs. Let there
+                            be light!</p>
+                        <button class="btn btn-primary book-btn-v2">Booking</button>
+                    </div>
+                    <div class="service-item">
+                        <span class="price-chip">₹150</span>
+                        <h3>Furniture Fix</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Wobbly beds or broken desk legs? Stable
+                            and secure again.</p>
+                        <button class="btn btn-primary book-btn-v2">Booking</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Laundry -->
+            <section class="category-section reveal">
+                <div class="category-header">
+                    <div class="category-icon-bg">🫧</div>
+                    <div>
+                        <h2>Fresh Laundry</h2>
+                        <p style="color: var(--text-muted);">Hygiene at its best.</p>
+                    </div>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <span class="price-chip">₹60 / kg</span>
+                        <h3>Wash & Fold</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Neatly folded and smelling great. No more
+                            laundry pile.</p>
+                        <button class="btn btn-primary book-btn-v2">Booking</button>
+                    </div>
+                    <div class="service-item">
+                        <span class="price-chip">₹80 / kg</span>
+                        <h3>Express 24h</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Urgent meeting or date? Get it fresh by
+                            tomorrow.</p>
+                        <button class="btn btn-primary book-btn-v2">Booking</button>
+                    </div>
+                    <div class="service-item">
+                        <span class="price-chip">₹10 / pc</span>
+                        <h3>Premium Iron</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Steam ironing for that sharp,
+                            professional look.</p>
+                        <button class="btn btn-primary book-btn-v2">Booking</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container" style="text-align: center; padding: 2rem 0;">
+            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

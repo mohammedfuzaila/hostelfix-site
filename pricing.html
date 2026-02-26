@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | HostelFix - Transparent Student Rates</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .pricing-table-v2 {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 1rem;
+            margin: 4rem 0 8rem;
+        }
+
+        .pricing-table-v2 th {
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .pricing-table-v2 tr {
+            background: var(--surface);
+            transition: var(--transition);
+        }
+
+        .pricing-table-v2 td {
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-table-v2 td:first-child {
+            border-left: 1px solid var(--border);
+            border-top-left-radius: var(--radius-md);
+            border-bottom-left-radius: var(--radius-md);
+            font-weight: 700;
+        }
+
+        .pricing-table-v2 td:last-child {
+            border-right: 1px solid var(--border);
+            border-top-right-radius: var(--radius-md);
+            border-bottom-right-radius: var(--radius-md);
+        }
+
+        .pricing-table-v2 tr:hover {
+            transform: scale(1.01);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .plan-cards-v2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 6rem 0 10rem;
+        }
+
+        .plan-card-v2 {
+            background: var(--surface);
+            padding: 4rem 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .plan-card-v2:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+        }
+
+        .plan-card-v2.pro-v2 {
+            background: var(--text-main);
+            color: white;
+            border: none;
+            transform: scale(1.05);
+        }
+
+        .pro-v2:hover {
+            transform: scale(1.07) translateY(-10px);
+        }
+
+        .popular-badge-v2 {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1024px) {
+            .plan-cards-v2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="home.html" class="logo">Hostel<span>Fix</span></a>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="how-it-works.html">How it Works</a>
+                    <a href="pricing.html" class="active">Pricing</a>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="color: white; padding: 0.6rem 1.2rem;">Support</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">MEMBERSHIP V2.0</span>
+            <h1>Straightforward <span style="color: var(--primary)">Pricing</span></h1>
+            <p class="section-subtitle">Optimized for student budgets. No hidden fees. Ever.</p>
+        </div>
+
+        <div class="pricing-table-container">
+            <table class="pricing-table-v2 reveal">
+                <tr>
+                    <th>Service</th>
+                    <th>Standard</th>
+                    <th>Pro Member</th>
+                    <th>Express</th>
+                </tr>
+                <tr>
+                    <td>Fan Repair</td>
+                    <td>₹150</td>
+                    <td>₹100</td>
+                    <td>+ ₹50</td>
+                </tr>
+                <tr>
+                    <td>Tube Light</td>
+                    <td>₹80</td>
+                    <td>₹40</td>
+                    <td>+ ₹30</td>
+                </tr>
+                <tr>
+                    <td>Laundry</td>
+                    <td>₹60/kg</td>
+                    <td>₹40/kg</td>
+                    <td>Same Day</td>
+                </tr>
+                <tr>
+                    <td>Room Cleaning</td>
+                    <td>₹200</td>
+                    <td>₹120</td>
+                    <td>+ ₹80</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-header reveal" style="margin-top: 6rem;">
+            <span class="section-tag">MEMBERSHIPS</span>
+            <h2>Unlock More <span style="color: var(--secondary);">Savings</span></h2>
+        </div>
+
+        <div class="plan-cards-v2">
+            <div class="plan-card-v2 reveal" style="transition-delay: 0.1s;">
+                <h3>Lite</h3>
+                <div class="price-tag">₹0<span>/month</span></div>
+                <ul class="feature-list">
+                    <li>Regular service rates</li>
+                    <li>Standard support</li>
+                    <li>Mobile app access</li>
+                </ul>
+                <a href="#" class="btn btn-outline" style="width: 100%;">Get Started</a>
+            </div>
+
+            <div class="plan-card-v2 pro-v2 reveal" style="transition-delay: 0.2s;">
+                <div class="popular-badge-v2">BEST FOR HOSTELERS</div>
+                <h3>Student Pro</h3>
+                <div class="price-tag" style="color: var(--secondary);">₹199<span style="color: #94A3B8;">/month</span>
+                </div>
+                <ul class="feature-list">
+                    <li>20% Off all repairs</li>
+                    <li>0 Delivery fees</li>
+                    <li>Priority Assignment</li>
+                    <li>Weekly room check-up</li>
+                </ul>
+                <a href="#" class="btn btn-secondary" style="width: 100%;">Upgrade Now</a>
+            </div>
+
+            <div class="plan-card-v2 reveal" style="transition-delay: 0.3s;">
+                <h3>Room Group</h3>
+                <div class="price-tag">₹499<span>/month</span></div>
+                <ul class="feature-list">
+                    <li>Shared for 4 roommates</li>
+                    <li>All Pro perks</li>
+                    <li>Bi-weekly deep clean</li>
+                </ul>
+                <a href="#" class="btn btn-outline" style="width: 100%;">Buy for Room</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container" style="text-align: center; padding: 2rem 0;">
+            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
