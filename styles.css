@@ -55,12 +55,19 @@ h3,
 }
 
 h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.2rem, 10vw, 4.5rem);
     line-height: 1.1;
 }
 
+h1 span {
+    background: linear-gradient(90deg, var(--primary), #818CF8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 h2 {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.8rem, 8vw, 3rem);
 }
 
 a {
@@ -260,7 +267,7 @@ nav {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, minmax(200px, auto));
+    grid-template-rows: auto;
     gap: 1.5rem;
 }
 
@@ -355,6 +362,23 @@ nav {
     margin: 1.5rem auto 0;
 }
 
+.hero-content .section-subtitle {
+    margin-left: 0;
+    margin-bottom: 2.5rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 480px) {
+    .hero-btns {
+        flex-direction: column;
+    }
+}
+
 .footer-simple {
     margin-top: 0;
     border-top: 1px solid var(--border);
@@ -394,21 +418,65 @@ nav {
 
 .hero-image-v2 {
     position: relative;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    z-index: 1;
+}
+
+.hero-card-img {
+    background: var(--surface);
     border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    transform: rotate(-2deg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: var(--transition);
 }
 
-.hero-image-v2 img {
+.hero-card-img img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    border-radius: calc(var(--radius-lg) - 8px);
+    filter: saturate(1.2);
+    display: block;
     object-fit: cover;
-    transition: transform 0.8s ease;
 }
 
-.hero-image-v2:hover img {
-    transform: scale(1.05);
+.hero-floating-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--surface-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid white;
+    box-shadow: var(--shadow-md);
+    transform: rotate(4deg);
+    z-index: 2;
+}
+
+.hero-floating-badge p:first-child {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.hero-floating-badge p:last-child {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .hero-floating-badge {
+        bottom: 10px;
+        right: 10px;
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+.hero-image-v2:hover .hero-card-img {
+    transform: rotate(0deg) scale(1.02);
 }
 
 .footer-grid {
@@ -428,7 +496,7 @@ nav {
     .hero-grid,
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .vibe-section {
@@ -440,6 +508,8 @@ nav {
     .stats-badge-container {
         flex-wrap: wrap;
         gap: 1.5rem;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -479,20 +549,36 @@ nav {
 
 @media (max-width: 768px) {
     section {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
 
     .hero-grid,
     .footer-grid,
     .bento-grid,
     .grid-3 {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem;
+        width: 100% !important;
+    }
+
+    .bento-item,
+    .bento-item-large,
+    .bento-item-wide {
+        width: 100% !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        padding: 2rem;
     }
 
     .hero-image-v2 {
         margin-top: 2rem;
-        aspect-ratio: 4/3;
+        width: 100%;
+        position: relative;
+    }
+
+    .hero-image-v2 img {
+        height: auto;
     }
 
     .pricing-table-container {
@@ -513,9 +599,12 @@ nav {
     }
 
     .stats-badge-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
     }
 
     .dash-card,
@@ -530,6 +619,39 @@ nav {
 
     .vibe-stats h4 {
         font-size: 2rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 10vw, 2.8rem) !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-btns {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+
+    .hero-btns .btn {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .hero-floating-badge {
+        bottom: 10px !important;
+        right: 10px !important;
+        padding: 1rem !important;
+        font-size: 0.8rem !important;
+        transform: rotate(2deg) !important;
+    }
+
+    .hero-image-v2 {
+        overflow: hidden !important;
+    }
+
+    .price-tag {
+        font-size: 2.5rem;
     }
 }
 
@@ -608,14 +730,23 @@ nav {
 
 /* Refined Reveal */
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 1;
+    /* Default to visible */
+    transform: none;
+    transition: none;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+@media (min-width: 769px) {
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
