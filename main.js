@@ -88,7 +88,74 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 
-    <!-- Step 4: Completed -->
+    <!-- Step 4: Payment -->
+    <div class="booking-step" id="stepPayment">
+        <style>
+            .qr-scanner {
+                position: relative;
+                width: 180px;
+                height: 180px;
+                margin: 2rem auto;
+                background: white;
+                border-radius: 12px;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+            .qr-grid {
+                width: 100%;
+                height: 100%;
+                background-image: 
+                    linear-gradient(45deg, var(--text-main) 25%, transparent 25%),
+                    linear-gradient(-45deg, var(--text-main) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, var(--text-main) 75%),
+                    linear-gradient(-45deg, transparent 75%, var(--text-main) 75%);
+                background-size: 20px 20px;
+                background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+                opacity: 0.15;
+            }
+            .qr-bracket {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-color: var(--primary);
+                border-style: solid;
+            }
+            .qb-tl { top: 0; left: 0; border-width: 4px 0 0 4px; border-radius: 12px 0 0 0; }
+            .qb-tr { top: 0; right: 0; border-width: 4px 4px 0 0; border-radius: 0 12px 0 0; }
+            .qb-bl { bottom: 0; left: 0; border-width: 0 0 4px 4px; border-radius: 0 0 0 12px; }
+            .qb-br { bottom: 0; right: 0; border-width: 0 4px 4px 0; border-radius: 0 0 12px 0; }
+            .scan-line {
+                position: absolute;
+                top: 0;
+                left: 10%;
+                width: 80%;
+                height: 3px;
+                background: var(--primary);
+                box-shadow: 0 0 15px 2px var(--primary);
+                animation: scan-anim 2s infinite alternate ease-in-out;
+            }
+            @keyframes scan-anim {
+                0% { top: 10%; }
+                100% { top: 90%; }
+            }
+        </style>
+        <div class="hero-avatar" style="background: var(--surface); color: var(--primary); border: 2px solid var(--primary);">💳</div>
+        <h2 style="color: var(--text-main);">Scan to Pay</h2>
+        <p style="color: var(--text-muted); margin-top: 1rem;">Please scan the QR code to complete your payment securely.</p>
+        
+        <div class="qr-scanner">
+            <div class="qr-bracket qb-tl"></div>
+            <div class="qr-bracket qb-tr"></div>
+            <div class="qr-bracket qb-bl"></div>
+            <div class="qr-bracket qb-br"></div>
+            <div class="qr-grid"></div>
+            <div class="scan-line"></div>
+        </div>
+
+        <button class="btn btn-primary" id="paymentDoneBtn" style="width: 100%;">Payment Completed →</button>
+    </div>
+
+    <!-- Step 5: Completed -->
     <div class="booking-step" id="stepDone">
         <div class="hero-avatar" style="background: var(--accent);">✅</div>
         <h2 style="color: var(--accent);">Mission Completed!</h2>
@@ -101,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.insertAdjacentHTML('beforeend', bookingHTML);
 
     const overlay = document.getElementById('bookingOverlay');
-    const steps = ['Finding', 'Found', 'Fixing', 'Done'];
+    const steps = ['Finding', 'Found', 'Fixing', 'Payment', 'Done'];
 
     function showStep(stepName) {
         document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
@@ -126,12 +193,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const interval = setInterval(() => {
             if (width >= 100) {
                 clearInterval(interval);
-                showStep('Done');
+                showStep('Payment');
             } else {
                 width += 2;
                 bar.style.width = width + '%';
             }
         }, 100);
+    });
+
+    document.getElementById('paymentDoneBtn').addEventListener('click', () => {
+        showStep('Done');
     });
 
     document.getElementById('closeBooking').addEventListener('click', () => {

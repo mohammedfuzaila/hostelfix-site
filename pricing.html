@@ -213,39 +213,89 @@
 
         <div class="plan-cards-v2">
             <div class="plan-card-v2 reveal" style="transition-delay: 0.1s;">
-                <h3>Lite</h3>
-                <div class="price-tag">₹0<span>/month</span></div>
+                <h3>starter Pack</h3>
+                <div class="price-tag">₹299<span>/month</span></div>
                 <ul class="feature-list">
-                    <li>Regular service rates</li>
-                    <li>Standard support</li>
-                    <li>Mobile app access</li>
+                    <li>Basic support services</li>
+                    <li>Quick fix access</li>
+                    <li>Basic tech troubleshooting</li>
                 </ul>
                 <a href="#" class="btn btn-outline" style="width: 100%;">Get Started</a>
             </div>
 
             <div class="plan-card-v2 pro-v2 reveal" style="transition-delay: 0.2s;">
                 <div class="popular-badge-v2">BEST FOR HOSTELERS</div>
-                <h3>Student Pro</h3>
-                <div class="price-tag" style="color: var(--secondary);">₹199<span style="color: #94A3B8;">/month</span>
+                <h3>Pro Pack</h3>
+                <div class="price-tag" style="color: var(--secondary);">₹899<span style="color: #94A3B8;">/month</span>
                 </div>
                 <ul class="feature-list">
-                    <li>20% Off all repairs</li>
-                    <li>0 Delivery fees</li>
-                    <li>Priority Assignment</li>
-                    <li>Weekly room check-up</li>
+                    <li>Laundry Service</li>
+                    <li>Priority support</li>
+                    <li>Advanced tech assistance</li>
+                    <li>Curated grocery packs</li>
                 </ul>
                 <a href="#" class="btn btn-secondary" style="width: 100%;">Upgrade Now</a>
             </div>
 
             <div class="plan-card-v2 reveal" style="transition-delay: 0.3s;">
-                <h3>Room Group</h3>
-                <div class="price-tag">₹499<span>/month</span></div>
+                <h3>Elite Pack</h3>
+                <div class="price-tag">₹1499<span>/month</span></div>
                 <ul class="feature-list">
-                    <li>Shared for 4 roommates</li>
-                    <li>All Pro perks</li>
-                    <li>Bi-weekly deep clean</li>
+                    <li>Premium services</li>
+                    <li>Faster response times</li>
+                    <li>Personalized assistance</li>
+                    <li>Exclusive Deals & Benefits</li>
+                    <li>24/7 support</li>
                 </ul>
-                <a href="#" class="btn btn-outline" style="width: 100%;">Buy for Room</a>
+                <a href="#" class="btn btn-outline plan-btn" style="width: 100%;">Buy for Room</a>
+            </div>
+        </div>
+
+        <!-- Payment Method Modal -->
+        <div class="booking-overlay" id="paymentOverlay">
+            <div class="booking-modal" style="padding: 2.5rem; text-align: left; max-width: 450px;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="color: var(--text-main); font-size: 1.8rem;">Payment Method</h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.95rem;">Select your secure
+                        online payment option. (No Cash)</p>
+                </div>
+
+                <div class="payment-methods" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <!-- UPI Option -->
+                    <label
+                        style="display: flex; align-items: center; padding: 1.25rem; border: 2px solid var(--primary); border-radius: var(--radius-md); cursor: pointer; transition: var(--transition); background: rgba(79, 70, 229, 0.05);"
+                        class="hover-glow" id="upiLabel">
+                        <input type="radio" name="payment_method" value="upi"
+                            style="margin-right: 1rem; accent-color: var(--primary);" checked
+                            onchange="updatePaymentSelection()">
+                        <div style="flex-grow: 1;">
+                            <h4 style="margin: 0; color: var(--text-main); font-weight: 700;">UPI</h4>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">GPay,
+                                PhonePe, Paytm</p>
+                        </div>
+                        <span style="font-size: 1.8rem;">📱</span>
+                    </label>
+
+                    <!-- Debit/Credit Card Option -->
+                    <label
+                        style="display: flex; align-items: center; padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-md); cursor: pointer; transition: var(--transition); background: var(--surface);"
+                        class="hover-glow" id="cardLabel">
+                        <input type="radio" name="payment_method" value="card"
+                            style="margin-right: 1rem; accent-color: var(--primary);"
+                            onchange="updatePaymentSelection()">
+                        <div style="flex-grow: 1;">
+                            <h4 style="margin: 0; color: var(--text-main); font-weight: 700;">Debit / Credit Card</h4>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Visa,
+                                MasterCard, RuPay</p>
+                        </div>
+                        <span style="font-size: 1.8rem;">💳</span>
+                    </label>
+                </div>
+
+                <button class="btn btn-primary" id="confirmPaymentBtn"
+                    style="width: 100%; margin-top: 2.5rem; padding: 1rem; font-size: 1.1rem;">Proceed to Pay</button>
+                <button class="btn btn-outline" id="closePaymentBtn"
+                    style="width: 100%; margin-top: 1rem; border: none; color: var(--text-muted); background: transparent;">Cancel</button>
             </div>
         </div>
     </main>
@@ -258,6 +308,52 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        // Update styling of selected payment option
+        function updatePaymentSelection() {
+            const upiLabel = document.getElementById('upiLabel');
+            const cardLabel = document.getElementById('cardLabel');
+            const isUpi = document.querySelector('input[name="payment_method"][value="upi"]').checked;
+
+            if (isUpi) {
+                upiLabel.style.border = '2px solid var(--primary)';
+                upiLabel.style.background = 'rgba(79, 70, 229, 0.05)';
+                cardLabel.style.border = '1px solid var(--border)';
+                cardLabel.style.background = 'var(--surface)';
+            } else {
+                cardLabel.style.border = '2px solid var(--primary)';
+                cardLabel.style.background = 'rgba(79, 70, 229, 0.05)';
+                upiLabel.style.border = '1px solid var(--border)';
+                upiLabel.style.background = 'var(--surface)';
+            }
+        }
+
+        // Handle Pricing Buttons -> Payment Modal Linkage
+        document.addEventListener('DOMContentLoaded', () => {
+            const planBtns = document.querySelectorAll('.plan-card-v2 .btn');
+            const paymentOverlay = document.getElementById('paymentOverlay');
+            const closePaymentBtn = document.getElementById('closePaymentBtn');
+            const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+
+            planBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    paymentOverlay.classList.add('active');
+                });
+            });
+
+            closePaymentBtn.addEventListener('click', () => {
+                paymentOverlay.classList.remove('active');
+            });
+
+            confirmPaymentBtn.addEventListener('click', () => {
+                // Determine which method is selected to redirect correctly in the future
+                const selectedMethod = document.querySelector('input[name="payment_method"]:checked').value;
+                alert(`Proceeding to secure ${selectedMethod.toUpperCase()} gateway...`);
+                paymentOverlay.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
