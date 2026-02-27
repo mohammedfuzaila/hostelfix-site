@@ -66,6 +66,17 @@
             outline: none;
             box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
         }
+
+        @media (max-width: 768px) {
+            .contact-v2-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-v2-card {
+                padding: 2rem 1.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -162,7 +173,8 @@
 
     <footer style="margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
         <div class="container" style="text-align: center; padding-bottom: 2rem;">
-            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+            <p>&copy; 2026 HostelFix. DESIGNED BY <a href="https://fuzailscript.in" target="_blank"
+                    style="color: inherit; text-decoration: underline;">FUZAILSCRIPT.IN</a></p>
         </div>
     </footer>
 

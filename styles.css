@@ -36,14 +36,20 @@ html {
     }
 }
 
+html,
 body {
     background-color: var(--background);
     color: var(--text-main);
     line-height: 1.6;
     font-family: 'Outfit', sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     width: 100%;
     position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hide-overflow {
+    overflow: hidden !important;
 }
 
 h1,
@@ -87,9 +93,16 @@ img {
 }
 
 .container {
-    width: 92%;
+    width: 100%;
     max-width: 1240px;
     margin: 0 auto;
+    padding: 0 5%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
 }
 
 /* Glassmorphism Header */
@@ -638,12 +651,19 @@ nav {
         margin: 0 !important;
     }
 
+    /* Definitve Mobile badge fix */
     .hero-floating-badge {
-        bottom: 10px !important;
-        right: 10px !important;
-        padding: 1rem !important;
-        font-size: 0.8rem !important;
-        transform: rotate(2deg) !important;
+        position: static !important;
+        margin-top: 1rem !important;
+        transform: none !important;
+        width: 100% !important;
+        box-shadow: var(--shadow-sm) !important;
+        text-align: center !important;
+        border-radius: var(--radius-md) !important;
+    }
+
+    .hero-card-img {
+        transform: none !important;
     }
 
     .hero-image-v2 {
@@ -725,6 +745,12 @@ nav {
 
     to {
         transform: translate(10%, 10%);
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-blob {
+        display: none !important;
     }
 }
 

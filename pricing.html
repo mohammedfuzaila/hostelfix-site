@@ -110,6 +110,33 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 768px) {
+            .pricing-table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .pricing-table-v2 {
+                min-width: 600px;
+            }
+
+            .plan-card-v2 {
+                padding: 3rem 1.5rem;
+            }
+
+            .plan-card-v2.pro-v2 {
+                transform: scale(1);
+            }
+
+            .pro-v2:hover {
+                transform: translateY(-10px);
+            }
+
+            .pricing-hero {
+                padding: 5rem 0 3rem;
+            }
+        }
     </style>
 </head>
 
@@ -140,7 +167,7 @@
     <main class="container">
         <div class="section-header reveal">
             <span class="section-tag">MEMBERSHIP V2.0</span>
-            <h1>Straightforward <span style="color: var(--primary)">Pricing</span></h1>
+            <h3>Straightforward <br><span style="color: var(--primary)">Pricing</span></h3>
             <p class="section-subtitle">Optimized for student budgets. No hidden fees. Ever.</p>
         </div>
 
@@ -225,7 +252,8 @@
 
     <footer class="footer-simple">
         <div class="container" style="text-align: center; padding: 2rem 0;">
-            <p>&copy; 2026 HostelFix. DESIGNED BY FUZAILSCRIPT.IN</p>
+            <p>&copy; 2026 HostelFix. DESIGNED BY <a href="https://fuzailscript.in" target="_blank"
+                    style="color: inherit; text-decoration: underline;">FUZAILSCRIPT.IN</a></p>
         </div>
     </footer>
 
